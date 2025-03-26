@@ -16,13 +16,26 @@
       {
         "command": "codelens.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "codelens.selectPath",
+        "title": "Select File or Folder for Info View"
       }
     ],
     "views": {
       "explorer": [
         {
-          "id": "directoryExplorer",
-          "name": "Directory View"
+          "id": "selectedItemExplorer",
+          "name": "Selected Item Info"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "codelens.selectPath",
+          "when": "view == selectedItemExplorer",
+          "group": "navigation"
         }
       ]
     }
